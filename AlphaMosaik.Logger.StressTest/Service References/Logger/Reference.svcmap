@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="09ffef66-98d9-4c71-8bd5-d4e82f35f07b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:1667/AlphaMosaikLogger" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="AlphaMosaikLogger.xsd" MetadataType="Schema" ID="601fac2f-11a4-4406-ab8e-6f9f6ee8a843" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?xsd=xsd2" />
+    <MetadataFile FileName="AlphaMosaikLogger.disco" MetadataType="Disco" ID="fc5cb799-75d9-4761-b5ae-9dd6a5c97a9c" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?disco" />
+    <MetadataFile FileName="AlphaMosaikLogger2.xsd" MetadataType="Schema" ID="870f67a7-20ce-4929-ae95-c559eba5ebd5" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?xsd=xsd1" />
+    <MetadataFile FileName="LoggerService.wsdl" MetadataType="Wsdl" ID="9d7ba46b-569e-42da-bc3d-28b598c7b6f6" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?wsdl" />
+    <MetadataFile FileName="AlphaMosaikLogger3.xsd" MetadataType="Schema" ID="941e7b83-bec9-4cd8-9824-b09868379cc6" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?xsd=xsd3" />
+    <MetadataFile FileName="AlphaMosaikLogger4.xsd" MetadataType="Schema" ID="8b6c14d4-dcee-40bc-94bd-b5a2e1e609e2" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?xsd=xsd4" />
+    <MetadataFile FileName="AlphaMosaikLogger1.xsd" MetadataType="Schema" ID="900afd94-6b67-4211-a978-04d4242484c6" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?xsd=xsd0" />
+    <MetadataFile FileName="AlphaMosaikLogger.wsdl" MetadataType="Wsdl" ID="6f386d31-6632-46fa-9f5e-e0645e0ca805" SourceId="1" SourceUrl="http://localhost:1667/AlphaMosaikLogger?wsdl=wsdl0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

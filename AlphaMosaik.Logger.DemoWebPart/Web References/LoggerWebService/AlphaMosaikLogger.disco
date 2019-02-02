@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://srv2k8-benj-dev/_vti_bin/AlphaMosaikLogger.asmx?wsdl" docRef="http://srv2k8-benj-dev/_vti_bin/AlphaMosaikLogger.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://srv2k8-benj-dev/_vti_bin/AlphaMosaikLogger.asmx" xmlns:q1="http://alphamosaik.com/Logger" binding="q1:LoggerWebServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://srv2k8-benj-dev/_vti_bin/AlphaMosaikLogger.asmx" xmlns:q2="http://alphamosaik.com/Logger" binding="q2:LoggerWebServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

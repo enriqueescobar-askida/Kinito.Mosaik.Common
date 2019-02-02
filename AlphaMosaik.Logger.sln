@@ -1,0 +1,87 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AF8785E9-7EB4-496C-A47F-43D4CF9D15F1}"
+	ProjectSection(SolutionItems) = preProject
+		AlphaMosaik.Logger.ad = AlphaMosaik.Logger.ad
+		System2.sd = System2.sd
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaMosaik.Logger", "AlphaMosaik.Logger\AlphaMosaik.Logger.csproj", "{412B3FFD-9F57-4C70-BFAB-A1D8A8506AF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaMosaik.Logger.Service", "AlphaMosaik.Logger.Service\AlphaMosaik.Logger.Service.csproj", "{842E9135-6E6E-4545-86EB-68AF697CF83C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaMosaik.Logger.WindowsService", "AlphaMosaik.Logger.WindowsService\AlphaMosaik.Logger.WindowsService.csproj", "{C04518D1-9CC9-4CE4-804E-7A6CB8C05620}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "AlphaMosaik.Logger.ServiceSetup", "AlphaMosaik.Logger.ServiceSetup\AlphaMosaik.Logger.ServiceSetup.vdproj", "{24EAF1E4-BE1D-4E74-9A21-074A999AF970}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaMosaik.Logger.Providers", "AlphaMosaik.Logger.Providers\AlphaMosaik.Logger.Providers.csproj", "{66E9951A-28A0-43E7-B413-469E95BB9F33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEvent", "TestEvent\TestEvent.csproj", "{63A63B67-CDE8-4702-AC92-C8D113E4887A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlphaMosaik.Logger.StressTest", "AlphaMosaik.Logger.StressTest\AlphaMosaik.Logger.StressTest.csproj", "{99F2AD44-BC6D-4508-838E-A8BD8AB3AE8E}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://mtlint12:8080/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = AlphaMosaik.Logger.ServiceSetup\\AlphaMosaik.Logger.ServiceSetup.vdproj
+		SccProjectName1 = AlphaMosaik.Logger.ServiceSetup
+		SccLocalPath1 = AlphaMosaik.Logger.ServiceSetup
+		SccProjectUniqueName2 = AlphaMosaik.Logger\\AlphaMosaik.Logger.csproj
+		SccProjectName2 = AlphaMosaik.Logger
+		SccLocalPath2 = AlphaMosaik.Logger
+		SccProjectUniqueName3 = AlphaMosaik.Logger.Service\\AlphaMosaik.Logger.Service.csproj
+		SccProjectName3 = AlphaMosaik.Logger.Service
+		SccLocalPath3 = AlphaMosaik.Logger.Service
+		SccProjectUniqueName4 = AlphaMosaik.Logger.WindowsService\\AlphaMosaik.Logger.WindowsService.csproj
+		SccProjectName4 = AlphaMosaik.Logger.WindowsService
+		SccLocalPath4 = AlphaMosaik.Logger.WindowsService
+		SccProjectUniqueName5 = AlphaMosaik.Logger.Providers\\AlphaMosaik.Logger.Providers.csproj
+		SccProjectName5 = AlphaMosaik.Logger.Providers
+		SccLocalPath5 = AlphaMosaik.Logger.Providers
+		SccProjectUniqueName6 = TestEvent\\TestEvent.csproj
+		SccProjectName6 = TestEvent
+		SccLocalPath6 = TestEvent
+		SccProjectUniqueName7 = AlphaMosaik.Logger.StressTest\\AlphaMosaik.Logger.StressTest.csproj
+		SccProjectName7 = AlphaMosaik.Logger.StressTest
+		SccLocalPath7 = AlphaMosaik.Logger.StressTest
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{412B3FFD-9F57-4C70-BFAB-A1D8A8506AF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{412B3FFD-9F57-4C70-BFAB-A1D8A8506AF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{412B3FFD-9F57-4C70-BFAB-A1D8A8506AF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{412B3FFD-9F57-4C70-BFAB-A1D8A8506AF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{842E9135-6E6E-4545-86EB-68AF697CF83C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{842E9135-6E6E-4545-86EB-68AF697CF83C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{842E9135-6E6E-4545-86EB-68AF697CF83C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{842E9135-6E6E-4545-86EB-68AF697CF83C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C04518D1-9CC9-4CE4-804E-7A6CB8C05620}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C04518D1-9CC9-4CE4-804E-7A6CB8C05620}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C04518D1-9CC9-4CE4-804E-7A6CB8C05620}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C04518D1-9CC9-4CE4-804E-7A6CB8C05620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24EAF1E4-BE1D-4E74-9A21-074A999AF970}.Debug|Any CPU.ActiveCfg = Debug
+		{24EAF1E4-BE1D-4E74-9A21-074A999AF970}.Release|Any CPU.ActiveCfg = Release
+		{66E9951A-28A0-43E7-B413-469E95BB9F33}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66E9951A-28A0-43E7-B413-469E95BB9F33}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66E9951A-28A0-43E7-B413-469E95BB9F33}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66E9951A-28A0-43E7-B413-469E95BB9F33}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63A63B67-CDE8-4702-AC92-C8D113E4887A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63A63B67-CDE8-4702-AC92-C8D113E4887A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63A63B67-CDE8-4702-AC92-C8D113E4887A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63A63B67-CDE8-4702-AC92-C8D113E4887A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99F2AD44-BC6D-4508-838E-A8BD8AB3AE8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99F2AD44-BC6D-4508-838E-A8BD8AB3AE8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99F2AD44-BC6D-4508-838E-A8BD8AB3AE8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99F2AD44-BC6D-4508-838E-A8BD8AB3AE8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

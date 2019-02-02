@@ -1,0 +1,89 @@
+﻿<%@ Page Language="C#" Inherits="System.Web.UI.Page" %> 
+<%@ Assembly Name="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %> 
+<%@ Import Namespace="Microsoft.SharePoint.Utilities" %> 
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<% Response.ContentType = "text/xml"; %>
+<wsdl:definitions xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://alphamosaik.com/Logger" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://alphamosaik.com/Logger" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://alphamosaik.com/Logger">
+      <s:element name="AddEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entry" type="tns:LogEntry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="LogEntry">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Level" type="tns:LogLevel" />
+          <s:element minOccurs="1" maxOccurs="1" name="StrictDateTimeEnabled" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TimeStamp" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="LogLevel">
+        <s:restriction base="s:string">
+          <s:enumeration value="Unassigned" />
+          <s:enumeration value="CriticalEvent" />
+          <s:enumeration value="WarningEvent" />
+          <s:enumeration value="InformationEvent" />
+          <s:enumeration value="Exception" />
+          <s:enumeration value="Assert" />
+          <s:enumeration value="Unexpected" />
+          <s:enumeration value="Monitorable" />
+          <s:enumeration value="High" />
+          <s:enumeration value="Medium" />
+          <s:enumeration value="Verbose" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="AddEntryResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AddEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:AddEntry" />
+  </wsdl:message>
+  <wsdl:message name="AddEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:AddEntryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="LoggerWebServiceSoap">
+    <wsdl:operation name="AddEntry">
+      <wsdl:input message="tns:AddEntrySoapIn" />
+      <wsdl:output message="tns:AddEntrySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LoggerWebServiceSoap" type="tns:LoggerWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEntry">
+      <soap:operation soapAction="http://alphamosaik.com/Logger/AddEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="LoggerWebServiceSoap12" type="tns:LoggerWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddEntry">
+      <soap12:operation soapAction="http://alphamosaik.com/Logger/AddEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoggerWebService">
+    <wsdl:port name="LoggerWebServiceSoap" binding="tns:LoggerWebServiceSoap">
+      <soap:address location=<% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request)),Response.Output); %> />
+    </wsdl:port>
+    <wsdl:port name="LoggerWebServiceSoap12" binding="tns:LoggerWebServiceSoap12">
+      <soap12:address location=<% SPHttpUtility.AddQuote(SPHttpUtility.HtmlEncode(SPWeb.OriginalBaseUrl(Request)),Response.Output); %> />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

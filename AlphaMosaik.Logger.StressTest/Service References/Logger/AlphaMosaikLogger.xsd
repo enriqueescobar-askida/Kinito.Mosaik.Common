@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AlphaMosaik.Logger.Service" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AlphaMosaik.Logger.Service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:1667/AlphaMosaikLogger?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/AlphaMosaik.Logger" />
+  <xs:complexType name="LogEntry">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AlphaMosaik.Logger" minOccurs="0" name="Level" type="q1:LogEntryLevel" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LogEntry" nillable="true" type="tns:LogEntry" />
+</xs:schema>

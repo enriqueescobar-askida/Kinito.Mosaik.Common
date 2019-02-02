@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<webParts>
+  <webPart xmlns="http://schemas.microsoft.com/WebPart/v3">
+    <metaData>
+      <type name="AlphaMosaik.Logger.DemoWebPart.DemoWebPart, AlphaMosaik.Logger.DemoWebPart, Version=1.0.0.0, Culture=neutral, PublicKeyToken=794b83062ea34137" />
+      <importErrorMessage>Cannot import AlphaMosaik Logger - DemoWebPart Web Part.</importErrorMessage>
+    </metaData>
+    <data>
+      <properties>
+        <property name="Title" type="string">AlphaMosaik Logger - DemoWebPart</property>
+        <property name="Description" type="string">This feature enables a WebPart used to test the AlphaMosaik Logger product</property>
+      </properties>
+    </data>
+  </webPart>
+</webParts>

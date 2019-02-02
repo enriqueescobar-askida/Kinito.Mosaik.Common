@@ -11,3 +11,4 @@ TemporaryGeneratedFile_*.cs
 *.user
 *.dll
 *.xml
+*.version
