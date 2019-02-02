@@ -1,0 +1,5 @@
+﻿Update the version number in the following places:
+1. AssemblyInfo.cs
+2. app.manifest
+3. Setup -> Organize Your Setup -> General Information : Both Product Name and Product Version
+4. Setup -> Organize Your Setup -> General Information : Create new GUID for Product Code (so that it auto uninstalls old version)
