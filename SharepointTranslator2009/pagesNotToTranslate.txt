@@ -1,0 +1,10 @@
+export
+ItemLang.aspx
+/Lists/TranslationContents/AllPhrasesClassicView.aspx
+/Lists/TranslationContents/CustomizedPhrasesClassicView.aspx
+/Lists/TranslationContents/NativePhrasesClassicView.aspx
+/Lists/TranslationContents/EditForm.aspx
+/AddGallery.aspx
+/socialdataframe.aspx
+/wpribbon.aspx
+/Postback.FormServer.aspx

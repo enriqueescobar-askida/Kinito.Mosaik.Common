@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5792BD97-0672-4132-A2BC-92A4A092BEE0}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TranslatorHttpHandler</AssemblyName>
+    <AssemblyOriginatorKeyFile>strongNameKey.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TranslatorHttpHandler</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>http://localhost/TranslatorHttpHandler/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <BaseAddress>285212672</BaseAddress>
+    <Optimize>true</Optimize>
+    <DebugType>
+    </DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.SharePoint, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\Common Files\Microsoft Shared\Web Server Extensions\14\ISAPI\Microsoft.SharePoint.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="system.management">
+      <Name>system.management</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>system.web</Name>
+    </Reference>
+    <Reference Include="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="System.Xml.Linq, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents\HttpApplicationEvents.cs" />
+    <Compile Include="ApplicationEvents\IHttpApplicationEvents.cs" />
+    <Compile Include="ApplicationEvents\StatisticsHttpApplicationEvents.cs" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BlackList.cs" />
+    <Compile Include="Dictionary\MultipleWordTranslationDictionaries.cs" />
+    <Compile Include="Dictionary\MultipleWordTranslationDictionary.cs" />
+    <Compile Include="Dictionary\StandardDictionary.cs" />
+    <Compile Include="Dictionary\WildcardDictionary.cs" />
+    <Compile Include="FileLogStatisticsWriter.cs" />
+    <Compile Include="ListLogStatisticsWriter.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForConvertAsciiCode.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForSearchBox.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagAlt.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagButtons.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagDateInSharePointList.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagDatePicker.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagDescription.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagInnerHtml.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagLayoutInfo.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagMain.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagMoveToDateImpl.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagMsPickerFooter.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagNavigationMode.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagRollover.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagsBase.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagsMultiLookupPicker.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagText.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagTitle.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTagTocLayoutMain.cs" />
+    <Compile Include="MatchEvaluators\DelegateWrapperForTranslateCalendarView.cs" />
+    <Compile Include="OpenMenuParemeters.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ResponseFilters\ResponseFilterGenericStream.cs" />
+    <Compile Include="ResponseFilters\ResponseFilterInplaceViewStream.cs" />
+    <Compile Include="ResponseFilters\ResponseFilterRobotsStream.cs" />
+    <Compile Include="Dictionary\SPSDictionary.cs" />
+    <Compile Include="TranslatorHelper\DebugTranslatorHelper.cs" />
+    <Compile Include="TranslatorHelper\TranslatorHelper.cs" />
+    <Compile Include="TranslatorHelper\StatisticsStandardTranslatorHelper.cs" />
+    <Compile Include="TranslatorHelper\StandardTranslatorHelper.cs" />
+    <Compile Include="TranslatorModule.cs" />
+    <Compile Include="TranslatorRegex.cs" />
+    <Compile Include="VaryByCultureHandler.cs" />
+    <Compile Include="WebPartMenuToDisplayHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="strongNameKey.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Kinito.Mosaik.Common\Alphamosaik.Common.Library\Alphamosaik.Common.Library.csproj">
+      <Project>{26B44355-9993-4535-BCD0-498910CDAB09}</Project>
+      <Name>Alphamosaik.Common.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Kinito.Mosaik.Common\Alphamosaik.Common.SharePoint.Library\Alphamosaik.Common.SharePoint.Library.csproj">
+      <Project>{115F2F07-F262-4E84-B033-8E6AAAE87B08}</Project>
+      <Name>Alphamosaik.Common.SharePoint.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alphamosaik.Oceanik.AutomaticTranslation\Alphamosaik.Oceanik.AutomaticTranslation.csproj">
+      <Project>{5BF6B9AC-3CAE-424B-9985-E960028374FD}</Project>
+      <Name>Alphamosaik.Oceanik.AutomaticTranslation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Alphamosaik.Oceanik.Sdk\Alphamosaik.Oceanik.Sdk.csproj">
+      <Project>{0A8EA2EE-DB7B-4098-BC75-C6225B465AF2}</Project>
+      <Name>Alphamosaik.Oceanik.Sdk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Translator.Common.Library\Translator.Common.Library.csproj">
+      <Project>{AE314842-2360-461C-8F95-0D815FDC58D5}</Project>
+      <Name>Translator.Common.Library</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+    <PostBuildEvent>if $(ConfigurationName) == Debug (
+cd $(ProjectDir)
+"C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\Bin\x64\gacutil.exe" /i "bin\Debug\TranslatorHttpHandler.dll" /f
+)</PostBuildEvent>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Reactor_Enabled="0" Reactor_Lib="0" Reactor_Automatic="1" Reactor_Commands="" Reactor_Project="" Reactor_Output="C:\Documents and Settings\Administrator\My Documents\Visual Studio 2005\Projects\Portail Equipe et Entreprise\Alphamosaik - SharepointTranslator2009\TranslatorHttpModule\bin\debug\TranslatorHttpHandler.dll" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

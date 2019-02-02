@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oceanik.CQWP.WebPart", "Oceanik.CQWP.WebPart.csproj", "{C1D239AD-4EB1-45D5-B629-587EC222A7D9}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://alphatfs.alphamosaik.com:8088/tfs/tfs2008
+		SccProjectUniqueName0 = Oceanik.CQWP.WebPart.csproj
+		SccProjectName0 = .
+		SccAuxPath0 = https://alphatfs.alphamosaik.com:8088/tfs/tfs2008
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1D239AD-4EB1-45D5-B629-587EC222A7D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C1D239AD-4EB1-45D5-B629-587EC222A7D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C1D239AD-4EB1-45D5-B629-587EC222A7D9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C1D239AD-4EB1-45D5-B629-587EC222A7D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C1D239AD-4EB1-45D5-B629-587EC222A7D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C1D239AD-4EB1-45D5-B629-587EC222A7D9}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

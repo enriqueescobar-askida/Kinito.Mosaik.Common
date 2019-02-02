@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package dslVersion="1.0.0.0" Id="626f1f80-e96e-44eb-8622-cf2ad48cdd0b" solutionId="626f1f80-e96e-44eb-8622-cf2ad48cdd0b" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel" name="Alphamosaik.Oceanik.Systran.Setting">
+    <features>
+        <featureReference  itemId="f0c426fb-0cb7-4725-99d8-83c6a18a5db8" />
+    </features>
+</package>

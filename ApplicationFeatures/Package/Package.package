@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="8edc9014-59ed-4f9d-9e99-a750cda9dde1" solutionId="8edc9014-59ed-4f9d-9e99-a750cda9dde1" resetWebServer="false" name="Alphamosaik.Translator.ApplicationFeatures" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Alphamosaik.Common.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\..\..\Common\Main\source\Alphamosaik.Common.Library\Alphamosaik.Common.Library\bin\Release\Alphamosaik.Common.Library.dll" />
+    <customAssembly location="Alphamosaik.Common.SharePoint.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\..\..\Common\Main\source\Alphamosaik.Common.SharePoint.Library\bin\Release\Alphamosaik.Common.SharePoint.Library.dll" />
+    <customAssembly location="Translator.Common.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Translator.Common.Library\bin\Release\Translator.Common.Library.dll" />
+    <customAssembly location="CheckDefaultLangEvent.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\CheckDefaultLangEvent\bin\Release\CheckDefaultLangEvent.dll" />
+    <customAssembly location="CreateGUIDEvent.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\CreateGUIDEvent\bin\Release\CreateGUIDEvent.dll" />
+    <customAssembly location="ListsInstallation.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\ListsInstallation\bin\Release\ListsInstallation.dll" />
+    <customAssembly location="ReloadCacheEvent.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\ReloadCacheEvent\bin\Release\ReloadCacheEvent.dll" />
+    <customAssembly location="TranslatorHttpHandler.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\TranslatorHttpModule\bin\Release\TranslatorHttpHandler.dll" />
+    <customAssembly location="UpdateItemAutoTranslation.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\UpdateItemAutoTranslation\bin\Release\UpdateItemAutoTranslation.dll" />
+    <customAssembly location="Alphamosaik.Oceanik.Sdk.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Alphamosaik.Oceanik.Sdk\bin\Release\Alphamosaik.Oceanik.Sdk.dll" />
+    <customAssembly location="Alphamosaik.Oceanik.AutomaticTranslation.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\Alphamosaik.Oceanik.AutomaticTranslation\bin\Release\Alphamosaik.Oceanik.AutomaticTranslation.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="226bcfdd-2f62-4e1a-b380-81e2b3df0256" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="822e64cb-bc55-496b-9dff-9f7e61d961f2" />
+    <projectItemReference itemId="10d0e3ae-ef82-45d5-a0dd-d0bfd0ee6e24" />
+    <projectItemReference itemId="29c336b7-c9be-4dd6-89a0-4022274afe70" />
+    <projectItemReference itemId="19091c30-d6c1-4d2b-9917-e98b9d35408e" />
+  </projectItems>
+</package>

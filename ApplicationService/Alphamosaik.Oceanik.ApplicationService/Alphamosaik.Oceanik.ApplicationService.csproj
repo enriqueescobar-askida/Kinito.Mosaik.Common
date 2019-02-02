@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D12D2004-F228-4A15-BEA6-E37166098768}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Alphamosaik.Oceanik.ApplicationService</RootNamespace>
+    <AssemblyName>Alphamosaik.Oceanik.ApplicationService</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SandboxedSolution>False</SandboxedSolution>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TokenReplacementFileExtensions>svc</TokenReplacementFileExtensions>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+    <Reference Include="System.Management.Automation" />
+    <Reference Include="Microsoft.SharePoint.PowerShell" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Features\OceanikApplicationServiceInstaller\OceanikApplicationServiceInstaller.EventReceiver.cs">
+      <DependentUpon>OceanikApplicationServiceInstaller.feature</DependentUpon>
+    </Compile>
+    <Compile Include="IOceanikContract.cs" />
+    <Compile Include="ADMIN\OceanikApplicationService\Create.aspx.cs">
+      <DependentUpon>Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\OceanikApplicationService\Create.aspx.designer.cs">
+      <DependentUpon>Create.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\OceanikApplicationService\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\OceanikApplicationService\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OceanikService.cs" />
+    <Compile Include="OceanikServiceApplication.cs" />
+    <Compile Include="OceanikServiceApplicationProxy.cs" />
+    <Compile Include="OceanikServiceClient.cs" />
+    <Compile Include="OceanikServiceHostFactory.cs" />
+    <Compile Include="OceanikServiceInstance.cs" />
+    <Compile Include="OceanikServiceProxy.cs" />
+    <Compile Include="PowerShellRegistration\NewOceanikServiceApplication.cs" />
+    <Compile Include="PowerShellRegistration\NewOceanikServiceApplicationProxy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ADMIN\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{92c1bb06-9506-48ed-bf5a-43bbc4856659}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\OceanikApplicationServiceInstaller\OceanikApplicationServiceInstaller.feature">
+      <FeatureId>{7d5ee5cc-481d-4a4a-9b62-613316354e63}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Package\Package.package">
+      <PackageId>{4ed07955-d804-4e21-b7c0-6814597b3592}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="PowerShellRegistration\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{63b27fb0-847f-41c9-840e-c6ee7d9b604d}</SharePointProjectItemId>
+    </None>
+    <None Include="WebClients\OceanikApplicationService\client.config" />
+    <None Include="WebClients\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{3fdc275e-73a1-4688-a9ac-9fcb0e387476}</SharePointProjectItemId>
+    </None>
+    <None Include="WebServices\OceanikApplicationService\web.config" />
+    <None Include="WebServices\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{90058853-ea31-482c-b614-31004f09a605}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Features\OceanikApplicationServiceInstaller\OceanikApplicationServiceInstaller.Template.xml">
+      <DependentUpon>OceanikApplicationServiceInstaller.feature</DependentUpon>
+    </Content>
+    <Content Include="ADMIN\OceanikApplicationService\Create.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="ADMIN\OceanikApplicationService\Manage.aspx">
+      <SubType>ASPXCodeBehind</SubType>
+    </Content>
+    <Content Include="PowerShellRegistration\OceanikServiceApplication.xml" />
+    <Content Include="WebServices\OceanikApplicationService\OceanikService.svc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <BuildDependsOn>$(BuildDependsOn);CreatePackage</BuildDependsOn>
+  </PropertyGroup>
+</Project>

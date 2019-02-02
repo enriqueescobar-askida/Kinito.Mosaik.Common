@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="e62b8555-2314-4488-994a-c072d2410362" solutionId="e62b8555-2314-4488-994a-c072d2410362" resetWebServer="false" name="Alphamosaik.Oceanik.Caching" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Alphamosaik.Common.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\..\..\Common\Main\source\Alphamosaik.Common.Library\Alphamosaik.Common.Library\bin\Release\Alphamosaik.Common.Library.dll" />
+    <customAssembly location="Alphamosaik.Common.SharePoint.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\..\..\Common\Main\source\Alphamosaik.Common.SharePoint.Library\bin\Release\Alphamosaik.Common.SharePoint.Library.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="18011b59-e9fb-468d-8578-3b84a2acd0ef" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="9ecb7196-beaf-4caf-84a5-52eb166617f6" />
+  </projectItems>
+</package>

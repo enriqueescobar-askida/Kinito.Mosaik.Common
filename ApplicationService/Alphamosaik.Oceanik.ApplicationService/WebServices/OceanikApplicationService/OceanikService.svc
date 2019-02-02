@@ -1,0 +1,5 @@
+﻿<%@ServiceHost Language="C#"
+    Service="Alphamosaik.Oceanik.ApplicationService.
+         OceanikServiceApplication, $SharePoint.Project.AssemblyFullName$" 
+    Factory="Alphamosaik.Oceanik.ApplicationService.
+         OceanikServiceHostFactory, $SharePoint.Project.AssemblyFullName$" %>

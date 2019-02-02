@@ -1,0 +1,1757 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.softissimo.com/GenericTranslator/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.softissimo.com/GenericTranslator/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.softissimo.com/GenericTranslator/">
+      <s:element name="TranslateText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="srcText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="templateInfo" type="tns:TemplateInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="translationOptions" type="tns:ArrayOfKeyValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="DirectionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="srcLanguageCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destLanguageCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="engineID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="extraInfo" nillable="true" type="tns:ExtraInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtraInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="textEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="htmlEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="fileEnabled" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="maxChars" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="templates" type="tns:ArrayOfTemplateInfo" />
+          <s:element minOccurs="1" maxOccurs="1" name="expirationDate" nillable="true" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="wordsLeft" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="kbLeft" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="srcLanguageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="destLanguageName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="features" type="tns:ArrayOfString" />
+          <s:element minOccurs="1" maxOccurs="1" name="canModifyTemplates" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="supportsReservedWords" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="supportsPreprocessor" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfTemplateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TemplateInfo" type="tns:TemplateInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TemplateInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="template" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isUserTemplate" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfKeyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="KeyValue" type="tns:KeyValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KeyValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Key" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Value" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="TranslateTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="translatedText" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="truncated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="wordsLeft" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BaseHeader" type="tns:BaseHeader" />
+      <s:complexType name="BaseHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Created" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="TranslateHTML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sourceHTML" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="templateInfo" type="tns:TemplateInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="baseUrl" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="useParser" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="translationOptions" type="tns:ArrayOfKeyValue" />
+            <s:element minOccurs="0" maxOccurs="1" name="charset" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TranslateHTMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="translatedHTML" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="truncated" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="wordsLeft" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TranslateFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputFilePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="templateInfo" type="tns:TemplateInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="translationOptions" type="tns:ArrayOfKeyValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TranslateFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="outputFilePath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="KBLeft" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TranslateStream">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="input" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="inputFileExtension" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="templateInfo" type="tns:TemplateInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="translationOptions" type="tns:ArrayOfKeyValue" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TranslateStreamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="output" type="s:base64Binary" />
+            <s:element minOccurs="1" maxOccurs="1" name="translationsLeft" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="outputFileExtension" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEngineList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEngineListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEngineListResult" type="tns:ArrayOfEngineInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfEngineInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="EngineInfo" type="tns:EngineInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="EngineInfo">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="code" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="label" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="version" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetEngineInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="enginecode" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEngineInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetEngineInfoResult" type="tns:EngineInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTranslationDirections">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="engineCode" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTranslationDirectionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTranslationDirectionsResult" type="tns:ArrayOfDirectionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDirectionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DirectionInfo" type="tns:DirectionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllTranslationDirections">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllTranslationDirectionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllTranslationDirectionsResult" type="tns:ArrayOfDirectionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTranslationTemplates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dir" type="tns:DirectionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTranslationTemplatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTranslationTemplatesResult" type="tns:ArrayOfTemplateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupportedFileExtensions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="engineCode" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSupportedFileExtensionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inputTypes" type="tns:ArrayOfExtensionInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="outputTypes" type="tns:ArrayOfExtensionInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfExtensionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ExtensionInfo" type="tns:ExtensionInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ExtensionInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="alternates" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAvailableDictionaries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="dictType" type="tns:DictType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="DictType">
+        <s:restriction base="s:string">
+          <s:enumeration value="SpecializedDictionaries" />
+          <s:enumeration value="UserDictionaries" />
+          <s:enumeration value="All" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetAvailableDictionariesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAvailableDictionariesResult" type="tns:ArrayOfDictionaryInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDictionaryInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="DictionaryInfo" type="tns:DictionaryInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DictionaryInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AddDomain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainDefinition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddDomainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddDomainResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenameDomain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RenameDomainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="RenameDomainResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainDefinition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="1" maxOccurs="1" name="domain" type="tns:TemplateInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetDomainDefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetDomainDefinitionResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainDefinition" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainDefinition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateDomainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateDomainResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDomain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="direction" type="tns:DirectionInfo" />
+            <s:element minOccurs="0" maxOccurs="1" name="domainName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDomainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDomainResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalStats">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalStatsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlobalStatsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalStatsDir">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGlobalStatsDirResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGlobalStatsDirResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatsTextTranslation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatsTextTranslationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatsTextTranslationResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatsFileTranslation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatsFileTranslationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatsFileTranslationResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatsBorders">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ticket" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatsBordersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetStatsBordersResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsParameters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetStatisticsParametersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="enabled" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="mode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHtmlLimits">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetHtmlLimitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="GetHtmlLimitsResult" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileLimits">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="engineCode" type="s:long" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFileLimitsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFileLimitsResult" type="tns:ArrayOfLong" />
+            <s:element minOccurs="0" maxOccurs="1" name="extensions" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfLong">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="long" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ArrayOfEngineInfo" nillable="true" type="tns:ArrayOfEngineInfo" />
+      <s:element name="EngineInfo" type="tns:EngineInfo" />
+      <s:element name="ArrayOfDirectionInfo" nillable="true" type="tns:ArrayOfDirectionInfo" />
+      <s:element name="ArrayOfString" nillable="true" type="tns:ArrayOfString" />
+      <s:element name="long" type="s:long" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TranslateTextSoapIn">
+    <wsdl:part name="parameters" element="tns:TranslateText" />
+  </wsdl:message>
+  <wsdl:message name="TranslateTextSoapOut">
+    <wsdl:part name="parameters" element="tns:TranslateTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="TranslateTextBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="TranslateHTMLSoapIn">
+    <wsdl:part name="parameters" element="tns:TranslateHTML" />
+  </wsdl:message>
+  <wsdl:message name="TranslateHTMLSoapOut">
+    <wsdl:part name="parameters" element="tns:TranslateHTMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="TranslateHTMLBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="TranslateFileSoapIn">
+    <wsdl:part name="parameters" element="tns:TranslateFile" />
+  </wsdl:message>
+  <wsdl:message name="TranslateFileSoapOut">
+    <wsdl:part name="parameters" element="tns:TranslateFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="TranslateFileBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="TranslateStreamSoapIn">
+    <wsdl:part name="parameters" element="tns:TranslateStream" />
+  </wsdl:message>
+  <wsdl:message name="TranslateStreamSoapOut">
+    <wsdl:part name="parameters" element="tns:TranslateStreamResponse" />
+  </wsdl:message>
+  <wsdl:message name="TranslateStreamBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEngineList" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEngineListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineListBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEngineInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEngineInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTranslationDirections" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTranslationDirectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTranslationDirectionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllTranslationDirections" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTranslationDirectionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllTranslationDirectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTranslationDirectionsBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationTemplatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTranslationTemplates" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationTemplatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTranslationTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationTemplatesBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetSupportedFileExtensionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSupportedFileExtensions" />
+  </wsdl:message>
+  <wsdl:message name="GetSupportedFileExtensionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSupportedFileExtensionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSupportedFileExtensionsBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDictionariesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAvailableDictionaries" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDictionariesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAvailableDictionariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAvailableDictionariesBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="AddDomainSoapIn">
+    <wsdl:part name="parameters" element="tns:AddDomain" />
+  </wsdl:message>
+  <wsdl:message name="AddDomainSoapOut">
+    <wsdl:part name="parameters" element="tns:AddDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddDomainBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="RenameDomainSoapIn">
+    <wsdl:part name="parameters" element="tns:RenameDomain" />
+  </wsdl:message>
+  <wsdl:message name="RenameDomainSoapOut">
+    <wsdl:part name="parameters" element="tns:RenameDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="RenameDomainBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainDefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetDomainDefinition" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainDefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetDomainDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetDomainDefinitionBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateDomain" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateDomainBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDomainSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDomain" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDomainSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDomainResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDomainBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlobalStats" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlobalStatsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGlobalStatsDir" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGlobalStatsDirResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatsTextTranslation" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatsTextTranslationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatsFileTranslation" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatsFileTranslationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatsBorders" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatsBordersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsParametersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetStatisticsParameters" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsParametersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetStatisticsParametersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetStatisticsParametersBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlLimitsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHtmlLimits" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlLimitsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHtmlLimitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlLimitsBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetFileLimitsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFileLimits" />
+  </wsdl:message>
+  <wsdl:message name="GetFileLimitsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFileLimitsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFileLimitsBaseHeader">
+    <wsdl:part name="BaseHeader" element="tns:BaseHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineListHttpGetIn" />
+  <wsdl:message name="GetEngineListHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEngineInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoHttpGetIn">
+    <wsdl:part name="enginecode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoHttpGetOut">
+    <wsdl:part name="Body" element="tns:EngineInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsHttpGetIn">
+    <wsdl:part name="engineCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDirectionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTranslationDirectionsHttpGetIn" />
+  <wsdl:message name="GetAllTranslationDirectionsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDirectionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersHttpGetIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlLimitsHttpGetIn" />
+  <wsdl:message name="GetHtmlLimitsHttpGetOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineListHttpPostIn" />
+  <wsdl:message name="GetEngineListHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfEngineInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoHttpPostIn">
+    <wsdl:part name="enginecode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetEngineInfoHttpPostOut">
+    <wsdl:part name="Body" element="tns:EngineInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsHttpPostIn">
+    <wsdl:part name="engineCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTranslationDirectionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDirectionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetAllTranslationDirectionsHttpPostIn" />
+  <wsdl:message name="GetAllTranslationDirectionsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfDirectionInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGlobalStatsDirHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsTextTranslationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsFileTranslationHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersHttpPostIn">
+    <wsdl:part name="startDate" type="s:string" />
+    <wsdl:part name="endDate" type="s:string" />
+    <wsdl:part name="ticket" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetStatsBordersHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfString" />
+  </wsdl:message>
+  <wsdl:message name="GetHtmlLimitsHttpPostIn" />
+  <wsdl:message name="GetHtmlLimitsHttpPostOut">
+    <wsdl:part name="Body" element="tns:long" />
+  </wsdl:message>
+  <wsdl:portType name="TranslatorSoap">
+    <wsdl:operation name="TranslateText">
+      <wsdl:input message="tns:TranslateTextSoapIn" />
+      <wsdl:output message="tns:TranslateTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TranslateHTML">
+      <wsdl:input message="tns:TranslateHTMLSoapIn" />
+      <wsdl:output message="tns:TranslateHTMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TranslateFile">
+      <wsdl:input message="tns:TranslateFileSoapIn" />
+      <wsdl:output message="tns:TranslateFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TranslateStream">
+      <wsdl:input message="tns:TranslateStreamSoapIn" />
+      <wsdl:output message="tns:TranslateStreamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineList">
+      <wsdl:input message="tns:GetEngineListSoapIn" />
+      <wsdl:output message="tns:GetEngineListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <wsdl:input message="tns:GetEngineInfoSoapIn" />
+      <wsdl:output message="tns:GetEngineInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <wsdl:input message="tns:GetTranslationDirectionsSoapIn" />
+      <wsdl:output message="tns:GetTranslationDirectionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <wsdl:input message="tns:GetAllTranslationDirectionsSoapIn" />
+      <wsdl:output message="tns:GetAllTranslationDirectionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationTemplates">
+      <wsdl:input message="tns:GetTranslationTemplatesSoapIn" />
+      <wsdl:output message="tns:GetTranslationTemplatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedFileExtensions">
+      <wsdl:input message="tns:GetSupportedFileExtensionsSoapIn" />
+      <wsdl:output message="tns:GetSupportedFileExtensionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDictionaries">
+      <wsdl:input message="tns:GetAvailableDictionariesSoapIn" />
+      <wsdl:output message="tns:GetAvailableDictionariesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddDomain">
+      <wsdl:input message="tns:AddDomainSoapIn" />
+      <wsdl:output message="tns:AddDomainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RenameDomain">
+      <wsdl:input message="tns:RenameDomainSoapIn" />
+      <wsdl:output message="tns:RenameDomainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainDefinition">
+      <wsdl:input message="tns:GetDomainDefinitionSoapIn" />
+      <wsdl:output message="tns:GetDomainDefinitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomain">
+      <wsdl:input message="tns:UpdateDomainSoapIn" />
+      <wsdl:output message="tns:UpdateDomainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <wsdl:input message="tns:DeleteDomainSoapIn" />
+      <wsdl:output message="tns:DeleteDomainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <wsdl:input message="tns:GetGlobalStatsSoapIn" />
+      <wsdl:output message="tns:GetGlobalStatsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <wsdl:input message="tns:GetGlobalStatsDirSoapIn" />
+      <wsdl:output message="tns:GetGlobalStatsDirSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <wsdl:input message="tns:GetStatsTextTranslationSoapIn" />
+      <wsdl:output message="tns:GetStatsTextTranslationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <wsdl:input message="tns:GetStatsFileTranslationSoapIn" />
+      <wsdl:output message="tns:GetStatsFileTranslationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <wsdl:input message="tns:GetStatsBordersSoapIn" />
+      <wsdl:output message="tns:GetStatsBordersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsParameters">
+      <wsdl:input message="tns:GetStatisticsParametersSoapIn" />
+      <wsdl:output message="tns:GetStatisticsParametersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <wsdl:input message="tns:GetHtmlLimitsSoapIn" />
+      <wsdl:output message="tns:GetHtmlLimitsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLimits">
+      <wsdl:input message="tns:GetFileLimitsSoapIn" />
+      <wsdl:output message="tns:GetFileLimitsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TranslatorHttpGet">
+    <wsdl:operation name="GetEngineList">
+      <wsdl:input message="tns:GetEngineListHttpGetIn" />
+      <wsdl:output message="tns:GetEngineListHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <wsdl:input message="tns:GetEngineInfoHttpGetIn" />
+      <wsdl:output message="tns:GetEngineInfoHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <wsdl:input message="tns:GetTranslationDirectionsHttpGetIn" />
+      <wsdl:output message="tns:GetTranslationDirectionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <wsdl:input message="tns:GetAllTranslationDirectionsHttpGetIn" />
+      <wsdl:output message="tns:GetAllTranslationDirectionsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <wsdl:input message="tns:GetGlobalStatsHttpGetIn" />
+      <wsdl:output message="tns:GetGlobalStatsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <wsdl:input message="tns:GetGlobalStatsDirHttpGetIn" />
+      <wsdl:output message="tns:GetGlobalStatsDirHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <wsdl:input message="tns:GetStatsTextTranslationHttpGetIn" />
+      <wsdl:output message="tns:GetStatsTextTranslationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <wsdl:input message="tns:GetStatsFileTranslationHttpGetIn" />
+      <wsdl:output message="tns:GetStatsFileTranslationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <wsdl:input message="tns:GetStatsBordersHttpGetIn" />
+      <wsdl:output message="tns:GetStatsBordersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <wsdl:input message="tns:GetHtmlLimitsHttpGetIn" />
+      <wsdl:output message="tns:GetHtmlLimitsHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="TranslatorHttpPost">
+    <wsdl:operation name="GetEngineList">
+      <wsdl:input message="tns:GetEngineListHttpPostIn" />
+      <wsdl:output message="tns:GetEngineListHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <wsdl:input message="tns:GetEngineInfoHttpPostIn" />
+      <wsdl:output message="tns:GetEngineInfoHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <wsdl:input message="tns:GetTranslationDirectionsHttpPostIn" />
+      <wsdl:output message="tns:GetTranslationDirectionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <wsdl:input message="tns:GetAllTranslationDirectionsHttpPostIn" />
+      <wsdl:output message="tns:GetAllTranslationDirectionsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <wsdl:input message="tns:GetGlobalStatsHttpPostIn" />
+      <wsdl:output message="tns:GetGlobalStatsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <wsdl:input message="tns:GetGlobalStatsDirHttpPostIn" />
+      <wsdl:output message="tns:GetGlobalStatsDirHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <wsdl:input message="tns:GetStatsTextTranslationHttpPostIn" />
+      <wsdl:output message="tns:GetStatsTextTranslationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <wsdl:input message="tns:GetStatsFileTranslationHttpPostIn" />
+      <wsdl:output message="tns:GetStatsFileTranslationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <wsdl:input message="tns:GetStatsBordersHttpPostIn" />
+      <wsdl:output message="tns:GetStatsBordersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <wsdl:input message="tns:GetHtmlLimitsHttpPostIn" />
+      <wsdl:output message="tns:GetHtmlLimitsHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TranslatorSoap" type="tns:TranslatorSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TranslateText">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateTextBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateTextBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateHTML">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateHTML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateHTMLBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateHTMLBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateFile">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateFileBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateFileBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateStream">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateStream" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateStreamBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:TranslateStreamBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineList">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetEngineList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEngineListBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEngineListBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetEngineInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEngineInfoBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetEngineInfoBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetTranslationDirections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetAllTranslationDirections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationTemplates">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetTranslationTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTranslationTemplatesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetTranslationTemplatesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedFileExtensions">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetSupportedFileExtensions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSupportedFileExtensionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetSupportedFileExtensionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDictionaries">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetAvailableDictionaries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAvailableDictionariesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAvailableDictionariesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDomain">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/AddDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:AddDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameDomain">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/RenameDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:RenameDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:RenameDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainDefinition">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetDomainDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDomainDefinitionBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetDomainDefinitionBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomain">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/UpdateDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/DeleteDomain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetGlobalStats" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGlobalStatsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGlobalStatsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetGlobalStatsDir" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGlobalStatsDirBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetGlobalStatsDirBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatsTextTranslation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatsTextTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatsTextTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatsFileTranslation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatsFileTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatsFileTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatsBorders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatsBordersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatsBordersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsParameters">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatisticsParameters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatisticsParametersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetStatisticsParametersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetHtmlLimits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetHtmlLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetHtmlLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLimits">
+      <soap:operation soapAction="http://www.softissimo.com/GenericTranslator/GetFileLimits" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFileLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetFileLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TranslatorSoap12" type="tns:TranslatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TranslateText">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateTextBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateTextBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateHTML">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateHTML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateHTMLBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateHTMLBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateFile">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateFileBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateFileBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TranslateStream">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/TranslateStream" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateStreamBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TranslateStreamBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineList">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetEngineList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEngineListBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEngineListBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetEngineInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEngineInfoBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetEngineInfoBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetTranslationDirections" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetAllTranslationDirections" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllTranslationDirectionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationTemplates">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetTranslationTemplates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTranslationTemplatesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetTranslationTemplatesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSupportedFileExtensions">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetSupportedFileExtensions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSupportedFileExtensionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetSupportedFileExtensionsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAvailableDictionaries">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetAvailableDictionaries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAvailableDictionariesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAvailableDictionariesBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddDomain">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/AddDomain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AddDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RenameDomain">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/RenameDomain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RenameDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:RenameDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDomainDefinition">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetDomainDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDomainDefinitionBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetDomainDefinitionBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDomain">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/UpdateDomain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDomain">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/DeleteDomain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteDomainBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetGlobalStats" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGlobalStatsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGlobalStatsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetGlobalStatsDir" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGlobalStatsDirBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetGlobalStatsDirBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatsTextTranslation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatsTextTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatsTextTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatsFileTranslation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatsFileTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatsFileTranslationBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatsBorders" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatsBordersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatsBordersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatisticsParameters">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetStatisticsParameters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatisticsParametersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetStatisticsParametersBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetHtmlLimits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetHtmlLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetHtmlLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileLimits">
+      <soap12:operation soapAction="http://www.softissimo.com/GenericTranslator/GetFileLimits" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFileLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetFileLimitsBaseHeader" part="BaseHeader" use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TranslatorHttpGet" type="tns:TranslatorHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="GetEngineList">
+      <http:operation location="/GetEngineList" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <http:operation location="/GetEngineInfo" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <http:operation location="/GetTranslationDirections" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <http:operation location="/GetAllTranslationDirections" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <http:operation location="/GetGlobalStats" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <http:operation location="/GetGlobalStatsDir" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <http:operation location="/GetStatsTextTranslation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <http:operation location="/GetStatsFileTranslation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <http:operation location="/GetStatsBorders" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <http:operation location="/GetHtmlLimits" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TranslatorHttpPost" type="tns:TranslatorHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="GetEngineList">
+      <http:operation location="/GetEngineList" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEngineInfo">
+      <http:operation location="/GetEngineInfo" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTranslationDirections">
+      <http:operation location="/GetTranslationDirections" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTranslationDirections">
+      <http:operation location="/GetAllTranslationDirections" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStats">
+      <http:operation location="/GetGlobalStats" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGlobalStatsDir">
+      <http:operation location="/GetGlobalStatsDir" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsTextTranslation">
+      <http:operation location="/GetStatsTextTranslation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsFileTranslation">
+      <http:operation location="/GetStatsFileTranslation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStatsBorders">
+      <http:operation location="/GetStatsBorders" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHtmlLimits">
+      <http:operation location="/GetHtmlLimits" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Translator">
+    <wsdl:port name="TranslatorSoap" binding="tns:TranslatorSoap">
+      <soap:address location="http://demo.reverso.com/ri5/riws/translation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TranslatorSoap12" binding="tns:TranslatorSoap12">
+      <soap12:address location="http://demo.reverso.com/ri5/riws/translation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TranslatorHttpGet" binding="tns:TranslatorHttpGet">
+      <http:address location="http://demo.reverso.com/ri5/riws/translation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TranslatorHttpPost" binding="tns:TranslatorHttpPost">
+      <http:address location="http://demo.reverso.com/ri5/riws/translation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

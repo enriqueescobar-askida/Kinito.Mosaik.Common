@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="4ed07955-d804-4e21-b7c0-6814597b3592" solutionId="4ed07955-d804-4e21-b7c0-6814597b3592" resetWebServer="false" name="Alphamosaik.Oceanik.ApplicationService" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <features>
+    <featureReference itemId="7d5ee5cc-481d-4a4a-9b62-613316354e63" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="92c1bb06-9506-48ed-bf5a-43bbc4856659" />
+    <projectItemReference itemId="63b27fb0-847f-41c9-840e-c6ee7d9b604d" />
+    <projectItemReference itemId="3fdc275e-73a1-4688-a9ac-9fcb0e387476" />
+    <projectItemReference itemId="90058853-ea31-482c-b614-31004f09a605" />
+  </projectItems>
+</package>

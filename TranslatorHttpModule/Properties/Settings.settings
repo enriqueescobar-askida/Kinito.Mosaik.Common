@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="TranslatorHttpHandler.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="TranslatorHttpHandler_LanguageService_Soap" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://api.microsofttranslator.com/V1/Soap.svc</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

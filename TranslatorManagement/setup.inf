@@ -1,0 +1,20 @@
+;*** BEGIN **********************************************************
+;**                                                                **
+;** Automatically generated on: Fri Jul 03 10:27:31 2009           **
+;**                                                                **
+;** MakeCAB Version: 5.2.3790.0                     **
+;**                                                                **
+;*** BEGIN **********************************************************
+[disk list]
+1,Disk 1
+[cabinet list]
+1,1,Translator2009Admin.wsp
+[file list]
+1,1,Manifest.xml,256
+1,1,Translator2009Admin\Feature.xml,382
+1,1,Translator2009Admin\elements.xml,1247
+;*** END ************************************************************
+;**                                                                **
+;** Automatically generated on: Fri Jul 03 10:27:31 2009           **
+;**                                                                **
+;*** END ************************************************************

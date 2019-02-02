@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="a1e66bc9-8bd0-4923-8d45-d1268b0e9cf1" solutionId="a1e66bc9-8bd0-4923-8d45-d1268b0e9cf1" resetWebServer="false" name="Oceanik.CQWP.WebPart" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="Alphamosaik.Common.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\..\..\..\..\Common\Main\source\Alphamosaik.Common.Library\Alphamosaik.Common.Library\bin\Release\Alphamosaik.Common.Library.dll" />
+    <customAssembly location="Alphamosaik.Common.SharePoint.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\..\..\..\..\Common\Main\source\Alphamosaik.Common.SharePoint.Library\bin\Release\Alphamosaik.Common.SharePoint.Library.dll" />
+    <customAssembly location="Translator.Common.Library.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="..\..\Translator.Common.Library\bin\Release\Translator.Common.Library.dll" />
+  </assemblies>
+  <features>
+    <featureReference itemId="133d2978-f877-423f-8dcc-df2dd7aa034c" />
+  </features>
+</package>

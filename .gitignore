@@ -12,3 +12,37 @@ TemporaryGeneratedFile_*.cs
 *.dll
 *.xml
 *.version
+/Alphamosaik.Oceanik.AlertNotifyHandler/Alphamosaik.Oceanik.AlertNotifyHandler.csproj.vspscc
+/Alphamosaik.Oceanik.AutomaticTranslation/Alphamosaik.Oceanik.AutomaticTranslation.csproj.vspscc
+/Alphamosaik.Oceanik.Caching/Alphamosaik.Oceanik.Caching.csproj.vspscc
+/Alphamosaik.Oceanik.Sdk/Alphamosaik.Oceanik.Sdk.csproj.vspscc
+/ApplicationFeatures/ApplicationFeatures.csproj.vspscc
+/ApplicationService/Alphamosaik.Oceanik.ApplicationService/Alphamosaik.Oceanik.ApplicationService.csproj.vspscc
+/ApplicationService/Alphamosaik.Oceanik.ApplicationService.vssscc
+/ApplicationService/Alphamosaik.Oceanik.ApplicationServiceConsumer/Alphamosaik.Oceanik.ApplicationServiceConsumer.csproj.vspscc
+/CheckDefaultLangEvent/CheckDefaultLangEvent.csproj.vspscc
+/CreateGUIDEvent/CreateGUIDEvent.csproj.vspscc
+/Extractor/Extractor/Extractor/TranslationsExtractor.csproj.vspscc
+/Formulaire Validation/Formulaire Premier/Formulaire Premier.csproj.vspscc
+/Formulaire Validation/Formulaire Validation.vssscc
+/GenerateLicenseApplication/GenerateLicenseApplication.csproj.vspscc
+/InstallHelper/InstallHelper.csproj.vspscc
+/InstallHelperConsole/InstallHelperConsole.csproj.vspscc
+/InstallOceanikCachingHelper/InstallOceanikCachingHelper.csproj.vspscc
+/ListsInstallation/ListsInstallation.csproj.vspscc
+/ModuleTestProject/ModuleTestProject.csproj.vspscc
+/Oceanik.CQWP.WebPart/Oceanik.CQWP.WebPart/Oceanik.CQWP.WebPart.csproj.vspscc
+/OceanikTests/OceanikTests.csproj.vspscc
+/ReloadCacheEvent/ReloadCacheEvent.csproj.vspscc
+/SharepointTranslator2009/SharepointTranslator2009.vdproj.vspscc
+/TestApp/TestApp.csproj.vspscc
+/TranslatingServicesTest/TranslatingServicesTest.csproj.vspscc
+/Translator.Common.Library/Translator.Common.Library.csproj.vspscc
+/Translator2009Installer/Translator2009Installer.csproj.vspscc
+/TranslatorHttpModule/TranslatorHttpModule.csproj.vspscc
+/TranslatorManagement/TranslatorManagement.csproj.vspscc
+/TranslatorUninstall/TranslatorUninstall.csproj.vspscc
+/UnitTestProject/UnitTestProject.csproj.vspscc
+/UpdateItemAutoTranslation/UpdateItemAutoTranslation.csproj.vspscc
+/WebSite/TestProject1/TestProject1.csproj.vspscc
+/WebSite/WebSite/WebSite.csproj.vspscc

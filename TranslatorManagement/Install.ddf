@@ -1,0 +1,13 @@
+;WSP CAB Generation
+.Set DiskDirectory1="c:\"
+.Set CabinetNameTemplate="Translator2009Admin.wsp"
+
+;All file reference should be from the project root
+
+;Files to place into the CAB Root
+Manifest.xml
+
+.Set DestinationDir="Translator2009Admin\"
+TEMPLATE\FEATURES\Translator2009Admin\Feature.xml
+TEMPLATE\FEATURES\Translator2009Admin\elements.xml
+

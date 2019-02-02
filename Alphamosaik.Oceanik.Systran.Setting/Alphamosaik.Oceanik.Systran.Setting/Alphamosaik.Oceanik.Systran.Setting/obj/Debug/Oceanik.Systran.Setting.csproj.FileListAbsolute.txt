@@ -1,0 +1,8 @@
+E:\Disk_X\ALPHAMOSAIK - SharePoint Translator\Main\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\bin\Debug\Oceanik.Systran.Setting.dll
+E:\Disk_X\ALPHAMOSAIK - SharePoint Translator\Main\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\bin\Debug\Oceanik.Systran.Setting.pdb
+E:\Disk_X\ALPHAMOSAIK - SharePoint Translator\Main\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\obj\Debug\Oceanik.Systran.Setting.dll
+E:\Disk_X\ALPHAMOSAIK - SharePoint Translator\Main\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\obj\Debug\Oceanik.Systran.Setting.pdb
+E:\Disk_X\Kinito.Mosaik.Common\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\bin\Debug\Oceanik.Systran.Setting.dll
+E:\Disk_X\Kinito.Mosaik.Common\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\bin\Debug\Oceanik.Systran.Setting.pdb
+E:\Disk_X\Kinito.Mosaik.Common\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\obj\Debug\Oceanik.Systran.Setting.dll
+E:\Disk_X\Kinito.Mosaik.Common\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\Alphamosaik.Oceanik.Systran.Setting\obj\Debug\Oceanik.Systran.Setting.pdb

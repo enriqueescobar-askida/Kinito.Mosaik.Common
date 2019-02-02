@@ -1,0 +1,29 @@
+What's New in Oceanik 5.1
+======================================================================================================================
+New Features:
+
+1.Simplified deployment 
+Oceanik use now wsp installation package for it's deployment. So installation is now done by only one server in the farm and it is automatically deployed to all servers in the farm.
+
+2.Configuration Store
+All settings are now centralized in a list call Configuration Store. No more use of the web.config to control settings.
+
+3.Language packs
+Automatic synchronisation of the SharePoint language packs with Oceanik.
+
+4.SharePoint Search
+SharePoint search is now able to index sites in multi-languages base on Oceanik dictionary and functionnalities, so the search can be done in every language.
+
+5.Sub Dictionary
+Sub site can now have their own sub dictionary that is on top of the global root dictionary.
+
+6.Metadatas Label
+Personalisation of the metadatas label used by Oceanik can be done.
+
+7.Language Banner
+New personalisation can be done on language label.
+
+
+Bug Fixes:
+
+Fixes some bugs from previous versions including the throttling limitation on sharepoint list.
