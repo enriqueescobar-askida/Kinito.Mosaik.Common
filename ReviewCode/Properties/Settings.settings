@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ReviewCode.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="WorkItemTitle" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Code Review</Value>
+    </Setting>
+    <Setting Name="SmtpHost" Type="System.String" Scope="User">
+      <Value Profile="(Default)">PRDMSX02</Value>
+    </Setting>
+    <Setting Name="SmtpURI" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://Webmail.alphamosaik.com</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
