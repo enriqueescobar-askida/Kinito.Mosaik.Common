@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1B4BC483-08B1-4055-9F6B-2A307794FB81}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlphaMosaik.SharePoint.ConfigurationStore</RootNamespace>
+    <AssemblyName>AlphaMosaik.SharePoint.ConfigurationStore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{BB1F664B-9266-4fd6-B973-E1E44974B511};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SandboxedSolution>False</SandboxedSolution>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigIdentifier.cs" />
+    <Compile Include="ConfigStore.cs" />
+    <Compile Include="ConfigStoreExpressionBuilder.cs" />
+    <Compile Include="ConfigStoreHelper.cs" />
+    <Compile Include="ConfigTestControl.cs" />
+    <Compile Include="ConfigTraceHelper.cs" />
+    <Compile Include="ConfigListEventReceiver\ConfigListEventReceiver.cs" />
+    <Compile Include="Features\Configuration Store\Configuration Store.EventReceiver.cs">
+      <DependentUpon>Configuration Store.feature</DependentUpon>
+    </Compile>
+    <Compile Include="InvalidConfigurationException.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Guide du développeur.docx" />
+    <None Include="Content types\Config_item\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{533b3556-c075-4b8b-b8ae-0316f487930e}</SharePointProjectItemId>
+    </None>
+    <None Include="ConfigListEventReceiver\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{05139f14-41bb-4c0f-910b-e339405cf70b}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\Configuration Store\Configuration Store.feature">
+      <FeatureId>{7437e75e-976c-477f-995b-23b2b12ecf97}</FeatureId>
+    </None>
+    <None Include="Fields\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{bdb06136-0084-4123-8cf0-75f45dddae6b}</SharePointProjectItemId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="List definitions\ConfigList\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{0035f05a-4001-4d84-8323-73dc5b45dbc1}</SharePointProjectItemId>
+    </None>
+    <None Include="List instances\Config_store\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{14045021-0f8b-48ea-8617-d6a1c9bdc658}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{852bc14c-2d25-42d2-8779-55a30970d3ed}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content types\Config_item\Elements.xml" />
+    <Content Include="ConfigListEventReceiver\Elements.xml" />
+    <Content Include="Features\Configuration Store\Configuration Store.Template.xml">
+      <DependentUpon>Configuration Store.feature</DependentUpon>
+    </Content>
+    <Content Include="Fields\Elements.xml" />
+    <Content Include="List definitions\ConfigList\Elements.xml" />
+    <Content Include="List definitions\ConfigList\Schema.xml" />
+    <Content Include="List instances\Config_store\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" />
+</Project>

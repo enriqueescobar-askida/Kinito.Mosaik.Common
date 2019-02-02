@@ -1,0 +1,14 @@
+﻿<ResourceDictionary
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:System="clr-namespace:System;assembly=mscorlib">
+	<BitmapImage x:Key="AddImage" UriSource="Images/add.png"/>
+	<BitmapImage x:Key="CancelImage"  UriSource="Images/cancel.png"/>
+	<BitmapImage x:Key="OKImage"  UriSource="Images/ok.png"/>
+	<BitmapImage x:Key="EditImage"  UriSource="Images/edit.png"/>
+	<BitmapImage x:Key="DeleteImage"  UriSource="Images/delete.png"/>
+	<LinearGradientBrush x:Key="LightBackgroundBrush" EndPoint="0.5,0" StartPoint="0.5,1">
+		<GradientStop Color="#FF63AADA"/>
+		<GradientStop Color="#FF4583AE" Offset="1"/>
+	</LinearGradientBrush>
+	<!-- Resource dictionary entries should be defined here. -->
+</ResourceDictionary>
